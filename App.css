@@ -1,0 +1,93 @@
+.nav-link{
+  margin-left: 60px;
+}
+.signup{
+  margin-left: 10px;
+}
+.login{
+  margin-left: 240px;
+}
+.h2-heading{
+  margin-top: 70px;
+}
+.card-container1{
+  display: flex;
+  float: left;
+ 
+
+}
+
+.card-title{
+  font-style: italic;
+}
+.card1{
+  width: 300px;
+ border-radius: 10px 10px 10px 10px;
+  margin-left: 35px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  
+}
+.planID{
+ background-color: rgb(0, 228, 140);
+margin-left: -13px;
+width: 80%;
+color: white;
+border-top-right-radius: 15px;
+border-bottom-right-radius: 15px;
+}
+.heading{
+  font-weight: 700;
+}
+.content{
+  font-size: 14px;
+}
+.content i{
+color: rgb(0, 179, 0);
+
+}
+.save{
+  font-size: 14px;
+  color: blue;
+  font-weight: 600;
+ 
+}
+.save-heading{
+  font-style: italic;
+}
+.suit{
+  font-size: 13px;
+}
+.btn{
+  width: 200px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+.save3{
+
+  font-size: 13px;
+  background-color: red;
+  width: 70%;
+  border-radius: 15px 15px 15px 15px;
+  margin-left: 40px;
+  color: white;
+  height: 25px;
+}
+.price{
+  font-weight: bolder;
+  font-size: 16px;
+  text-align: center;
+}
+.border{
+  height: 2px;
+  width: 90%;
+  background-color: rgb(97, 96, 96);
+  margin-left: 10px;
+}
+.border2{
+  height: 2px;
+  width: 60px;
+  background-color: black;
+  margin-left: 103px;
+  margin-top: -12px;
+}
+
