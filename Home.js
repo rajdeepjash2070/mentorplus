@@ -6,23 +6,18 @@ import axios from 'axios';
 
 const Home = () => {
     const [course,setCourse]=useState([]);
-     
- useEffect(() => {
+ useEffect((e) => {
 axios.get('http://demo3755793.mockable.io/plans').then(res=>{
-    console.log(res.data);
     setCourse(res.data)
 }).catch(err=>console.log(err))
         
-       
  },[]);
-     const changebg=(i)=>{
-      const a=(course[i].backgroundColor);
-       document.getElementsByClassName("card1").style.backgroundColor=a;
 
-     }
+
+     
 
  const Timer=()=>{
-  var countDownDate = new Date("Apr 26, 2022 10:37:25").getTime();
+  var countDownDate = new Date("Apr 27, 2022 10:37:25").getTime();
   var x = setInterval(function() {
   var now = new Date().getTime();
 
@@ -35,14 +30,14 @@ axios.get('http://demo3755793.mockable.io/plans').then(res=>{
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-
+ 
   document.getElementById("demo").innerHTML = hours + "h "
   + minutes + "m " + seconds + "s ";
  
-
+ 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementsByTagName("span").innerHTML = "OFFER EXPIRED";
+    document.getElementsById("demo").innerHTML = "OFFER Closed Weekend Plan Booked 100%";
   }
 }, 1000);
 
@@ -88,21 +83,19 @@ Timer();
         course && course.map((plan,i)=>(
          
             <div className="card-container1" key={i}>
-            
-    <div class="card1">
+    <div className="card1" style={{backgroundColor: `${plan.backgroundColor}`}}>
       <div class="card-body">
       <p><img src={plan.thumbnail} class="img-fluid" alt="..."/></p>
-      <div className='part1' id='demo'>
-         
-          
+      <div className='part1' id="demo">
+        
        <h5 className='save-heading text-center'>FLAT {plan.save} OFF</h5>
 
         </div>
        
-       <p className='planID'>{plan.planId}</p>
+       <p className='planID' style={{backgroundColor:`${plan.offerColor}`}}>{plan.planId}</p>
        <div className='heading text-center'>
       {plan.heading}</div>
-      <p>{plan.session}</p>
+    
       <p className='content '> <i class="fa-solid fa-check"></i>{plan.content[0]}</p>
       <p className='content '><i class="fa-solid fa-check"></i>{plan.content[1]}</p>
       <p className='content '><i class="fa-solid fa-check"></i>{plan.content[2]}</p>
@@ -113,7 +106,7 @@ Timer();
      
       <div className='text-center save'>Flat {plan.save} OFF for being referred by{plan.referral}</div>
      <div className='border'></div>
-      <div className='price'><i class="fa-solid fa-indian-rupee-sign"></i>{plan.originalPrice} <div className='save3'>Save{plan.save} </div><div>{plan.price}</div><div className='border2'></div></div>
+      <div className='price'><i class="fa-solid fa-indian-rupee-sign"></i><div className='oprice'>{plan.originalPrice} </div><div className='save3'>Save{plan.save} </div><div className='prevprice'>{plan.price}</div><div className='border2'></div></div>
   
       </div>
       <button type="button" class="btn btn-primary">Book Now</button>
